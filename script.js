@@ -1,3 +1,67 @@
+/*
+let todoArray = [];
+let todoForm = document.getElementById("form-todo");
+let todoList = document.getElementById("todo-name-list");
+let todoInput = document.getElementById("name-input-1");
+
+let todoItems= [];
+function addToDoItem(text) {
+  // Implement the logic to add a task here
+  let todoItem = {
+    id: todoItems.length,
+    text: text,
+    completed: false
+  }
+todoItems.push(todoItem)
+}
+
+// Function to remove a todo to the list
+function removeToDoItem(todoId) {
+  // Implement the logic to add a task here
+  for (let i = 0; i < todoItems.length; i++){
+    if (todoItems[i].id === todoId){
+      todoItems.splice(i, 1);
+      break;
+    }
+  }
+}
+
+// Function to mark a task as completed
+function markToDoItemAsCompleted(todoId) {
+  // Implement the logic to mark a task as completed here
+for (let i = 0; i < todoItems.length; i++){
+  if (todoItems[i].id === todoId){
+    todoItems[i].completed = true;
+    break;
+  }
+  }
+}
+
+// Function to clear all completed tasks
+function clearCompletedTasks() {
+  // Implement the logic to clear completed tasks here
+for (let i = todoItems.length; i > 0; i--){
+  if (todoitems[i].completed === true){
+    todoItems.splice(i, 1);
+  }
+}
+}
+
+todoForm.addEventListener("submit", addToDoItem, handleSubmitForm);
+
+function handleSubmitForm(event) {
+
+  event.preventDefault();
+
+  todoArray.push(todoInput.value);
+
+  todoForm.reset();
+
+  renderData();
+}
+*/
+
+
 let todoArray = [];
 let todoForm = document.getElementById("form-todo");
 let todoList = document.getElementById("todo-name-list");
@@ -37,8 +101,6 @@ function renderData() {
 
   for (let i=0; i < todoArray.length ; i++ ){
     let tempListItem = document.createElement("li");
-    let tempListItemDone = todoArray.length;
-
 
     tempListItem.textContent = todoArray[i];
     let tempButton = document.createElement("button");
@@ -68,15 +130,8 @@ function renderData() {
     tempButton1.addEventListener("click", function(event){
 
       console.log("You clicked on", event.target.dataset.todo);
-
-      if (tempListItemDone === todoArray.length){
-        tempListItemDone = todoArray.length + 1;
-        console.log("done")
-      }
-      else {
-        tempListItemDone = todoArray.length;
-        console.log("not done")
-      }
+      
+      
       // Re-render the list
       renderData();
 
@@ -91,6 +146,20 @@ function renderData() {
 
   }
 }
+
+
+function markToDoItemAsCompleted(todoId) {
+  // Implement the logic to mark a task as completed here
+for (let i = 0; i < todoItems.length; i++){
+  if (todoItems[i].id === todoId){
+    todoItems[i].completed = true;
+    break;
+  }
+  }
+}
+
+
+
 
 
 // Call renderlist for the first time

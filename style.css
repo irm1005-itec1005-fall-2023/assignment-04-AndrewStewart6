@@ -65,6 +65,9 @@ li {
   padding-bottom:0.5rem;
   list-style:none;
   border-radius: 1rem;
+   border-width:10px;
+   border-color:black;
+ 
 }
 
 button {
@@ -83,10 +86,11 @@ button {
 
 h1 {
   grid-row-start: 1;
-  grid-column-start:2;
+  grid-column-start:3;
 }
 
 form {
+
   grid-row-start: 2;
   grid-column-start:1;
   grid-column-end: 6; 
