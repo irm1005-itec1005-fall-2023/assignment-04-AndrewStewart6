@@ -37,15 +37,16 @@ function renderData() {
 
   for (let i=0; i < todoArray.length ; i++ ){
     let tempListItem = document.createElement("li");
+    let tempListItemDone = todoArray.length;
+
 
     tempListItem.textContent = todoArray[i];
-
     let tempButton = document.createElement("button");
 
     let tempButton1 = document.createElement("button");
-    tempButton.textContent = "Remove Todo";
+    tempButton.textContent = "Remove";
 
-    tempButton1.textContent = "Mark Todo as Done";
+    tempButton1.textContent = "Done";
 
     tempButton.dataset.todo = i;
 
@@ -68,6 +69,14 @@ function renderData() {
 
       console.log("You clicked on", event.target.dataset.todo);
 
+      if (tempListItemDone === todoArray.length){
+        tempListItemDone = todoArray.length + 1;
+        console.log("done")
+      }
+      else {
+        tempListItemDone = todoArray.length;
+        console.log("not done")
+      }
       // Re-render the list
       renderData();
 
