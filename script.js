@@ -1,4 +1,25 @@
 /*
+function addTodo() {
+  const todoText = todoInput.value.trim();
+
+  if (todoText !== '') {
+    try (
+      const todoItem = new Date().getTime();
+      const todoItem = {
+        id: todoId,
+        text: todoText,
+        completed: false;
+      }
+      todoItems.push(todoItem);
+      renderTodoList()
+      todoInput.value = '';
+    )
+  }
+}
+*/
+
+
+/*
 let todoArray = [];
 let todoForm = document.getElementById("form-todo");
 let todoList = document.getElementById("todo-name-list");
@@ -81,7 +102,7 @@ function handleSubmitForm(event) {
   // addTodoItem(superHeroInput.value);
 
   todoArray.push(todoInput.value);
-
+  
   // Clear the input
   // superHeroInput.value = "";
   todoForm.reset();
@@ -101,9 +122,11 @@ function renderData() {
 
   for (let i=0; i < todoArray.length ; i++ ){
     let tempListItem = document.createElement("li");
+    
 
     tempListItem.textContent = todoArray[i];
     let tempButton = document.createElement("button");
+    tempButton.className = "YourClass"; 
 
     let tempButton1 = document.createElement("button");
     tempButton.textContent = "Remove";
@@ -130,8 +153,7 @@ function renderData() {
     tempButton1.addEventListener("click", function(event){
 
       console.log("You clicked on", event.target.dataset.todo);
-      
-      
+
       // Re-render the list
       renderData();
 
@@ -144,17 +166,6 @@ function renderData() {
 
  todoList.appendChild(tempListItem);
 
-  }
-}
-
-
-function markToDoItemAsCompleted(todoId) {
-  // Implement the logic to mark a task as completed here
-for (let i = 0; i < todoItems.length; i++){
-  if (todoItems[i].id === todoId){
-    todoItems[i].completed = true;
-    break;
-  }
   }
 }
 

@@ -102,3 +102,7 @@ form {
   grid-column-start:1;
   grid-column-end:6;
 }
+
+.completed {
+  background-color:green;
+}
