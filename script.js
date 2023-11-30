@@ -92,32 +92,20 @@ todoForm.addEventListener("submit", handleSubmitForm);
 
 function handleSubmitForm(event) {
 
-  // Prevent the default behavior of the form`
   event.preventDefault();
-
-  // Grab the value from the input
-  //console.log("Name of Superhero: ", superHeroInput.value);
-
-  // This is what you do in add to do app
-  // addTodoItem(superHeroInput.value);
 
   todoArray.push(todoInput.value);
   
-  // Clear the input
-  // superHeroInput.value = "";
   todoForm.reset();
 
-  // Draw the list
   renderData();
 }
 
 
-// Render the data to the page
 function renderData() {
 
   console.log("Render Data", todoArray);
 
-  // Clear the list
   todoList.innerHTML = "";
 
   for (let i=0; i < todoArray.length ; i++ ){
@@ -137,24 +125,16 @@ function renderData() {
 
     tempButton1.dataset.todo = i;
 
-    // You can actually add an event handler here
     tempButton.addEventListener("click", function(event){
 
-      console.log("You clicked on", event.target.dataset.todo);
-
-      // Remove this item from the array
       todoArray.splice(event.target.dataset.todo, 1);
 
-      // Re-render the list
       renderData();
 
     });
 
     tempButton1.addEventListener("click", function(event){
 
-      console.log("You clicked on", event.target.dataset.todo);
-
-      // Re-render the list
       renderData();
 
     });
