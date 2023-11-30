@@ -35,9 +35,11 @@ body {
 
 main {
   min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
+  background-color:#304b72;
+  color:black;
+  display: grid;
+  padding-left:2rem;
+  padding-right:2rem;
   align-items: center;
 }
 
@@ -53,4 +55,54 @@ main {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+li {
+  background-color: rgb(150, 86, 86);
+  color:white;
+  padding: 1rem;
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+  list-style:none;
+  border-radius: 1rem;
+   border-width:10px;
+   border-color:black;
+ 
+}
+
+button {
+  background-color: rgb(149, 64, 132);
+  border-color:rgb(149, 64, 132);
+  border-radius:0.5rem;
+}
+
+.form1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color:rgb(136, 146, 67);
+  border-radius:1rem;
+  padding:1rem;
+}
+
+h1 {
+  grid-row-start: 1;
+  grid-column-start:3;
+}
+
+form {
+
+  grid-row-start: 2;
+  grid-column-start:1;
+  grid-column-end: 6; 
+  align-items:center;
+}
+
+.todos {
+  grid-row-start: 3;
+  grid-column-start:1;
+  grid-column-end:6;
+}
+
+.completed {
+  background-color:green;
 }
